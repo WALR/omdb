@@ -1,0 +1,5 @@
+<md-input-container>
+    <input mdInput placeholder="Buscar Pelicula" [(ngModel)]="kerwords" [formControl]="searchControl">
+</md-input-container>
+
+<button md-raised-button (click)="search()" color=primary>Buscar</button>
