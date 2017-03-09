@@ -3,6 +3,8 @@ import { MoviesService } from '../movies.service';
 
 import { FormControl } from '@angular/forms';
 
+import { MoviesComponent } from '../movies/movies.component';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -11,14 +13,14 @@ import { FormControl } from '@angular/forms';
 export class SearchComponent implements OnInit {
   kerwords: string = "";
   searchControl: FormControl = new FormControl();
-
+  
   constructor(private service: MoviesService) { }
 
   ngOnInit() {
     this.searchControl.valueChanges
         .debounceTime(500)
         .distinctUntilChanged()
-        .subscribe(newValue => this.service.search(newValue))
+        .subscribe(newValue => this.service.search(newValue));
   }
 
   search(){

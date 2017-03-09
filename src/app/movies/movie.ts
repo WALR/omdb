@@ -17,3 +17,14 @@ export class Movie{
     if(type) this.type = type;
   }
 }
+
+
+export class MovieSearch {
+    movies: Array<Movie>;
+    totalResults: number;
+    currentPage: number;
+    
+    constructor() {
+        this.totalResults = 0;
+    }
+}

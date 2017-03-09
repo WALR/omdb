@@ -10,7 +10,7 @@ import { MoviesService } from '../movies.service';
 })
 export class MoviesComponent implements OnInit {
   movies: Movie[];
-
+  pagesResult: Number;
   constructor(private service: MoviesService) {
 
    }
@@ -19,6 +19,11 @@ export class MoviesComponent implements OnInit {
 
   ngDoCheck(){
     this.movies = this.service.movies;
+    this.pagesResult = this.service.pagesResult;
+  }
+
+  showPage(){
+    console.log(this.pagesResult);
   }
 
 }
